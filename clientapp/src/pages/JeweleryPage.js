@@ -150,7 +150,7 @@ const JeweleryPage = () => {
                             >
                                 Додати в кошик
                             </Button>
-                            <p className="wishlist-info">135 додали в список бажань</p>
+                            
                         </div>
                     </Col>
                 </Row>

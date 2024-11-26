@@ -31,7 +31,7 @@ const NavBar = observer(() => {
         basketStore.decreaseQuantity(itemId);
     };
 
-    // Navigate to checkout page
+    
     const handleCheckout = () => {
         navigate(CHECKOUT_ROUTE);
     };
@@ -45,7 +45,7 @@ const NavBar = observer(() => {
                         <Nav className="ml-auto" style={{ color: 'white' }}>
                             <Button
                                 variant={"outline-light"}
-                                onClick={() => setShowBasket(true)} // Open basket modal
+                                onClick={() => setShowBasket(true)} 
                             >
                                 Basket ({basketStore.items.length})
                             </Button>
@@ -74,7 +74,7 @@ const NavBar = observer(() => {
                 </Container>
             </Navbar>
 
-            {/* Basket modal */}
+           
             <Modal show={showBasket} onHide={() => setShowBasket(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Your Basket</Modal.Title>

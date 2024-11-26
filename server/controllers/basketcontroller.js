@@ -5,9 +5,9 @@ class BasketController {
     async addItem(req, res, next) {
         try {
             const { jeweleryId, quantity } = req.body;
-            const basketId = req.user.id; // Предполагается, что пользователь авторизован
+            const basketId = req.user.id; 
 
-            // Проверяем, есть ли такой товар в корзине
+            
             let basketItem = await BasketItem.findOne({ where: { basketId, jeweleryId } });
             if (basketItem) {
                 basketItem.quantity += quantity;

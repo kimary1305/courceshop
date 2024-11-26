@@ -3,7 +3,7 @@ import { ADMIN_ROUTE, JEWELERY_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUT
 import Shop from "./pages/Shop";
 import Auth from "./pages/Auth";
 import JeweleryPage from "./pages/JeweleryPage";
-import CheckoutPage from "./pages/CheckoutPage"; // Import your Checkout page component
+import CheckoutPage from "./pages/CheckoutPage"; 
 
 export const authRoutes = [
     {
@@ -31,7 +31,7 @@ export const publicRoutes = [
         Component: JeweleryPage
     },
     {
-        path: CHECKOUT_ROUTE,  // Add the Checkout route
+        path: CHECKOUT_ROUTE,  
         Component: CheckoutPage
     }
 ]

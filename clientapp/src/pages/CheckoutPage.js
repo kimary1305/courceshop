@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { basketStore } from "../store/Basket"; // Import basketStore
+import { basketStore } from "../store/Basket"; 
 import { Button, Form, Col, Row, Image } from "react-bootstrap";
 import jsPDF from 'jspdf';
 
@@ -14,7 +14,7 @@ const CheckoutPage = () => {
   
   const totalPrice = basketStore.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-  // Handle form input changes
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -23,13 +23,12 @@ const CheckoutPage = () => {
     }));
   };
 
-  // Handle the order submission and generate receipt
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
-    generateReceipt(); // Generate and download the receipt
+    generateReceipt(); 
   };
 
-  // Function to generate and download the receipt
   const generateReceipt = () => {
     const doc = new jsPDF();
   
@@ -39,12 +38,12 @@ const CheckoutPage = () => {
       totalPrice,
     };
   
-    // Set background color to aquamarine
-    doc.setFillColor(0, 255, 255); // RGB for aquamarine
-    doc.rect(0, 0, 210, 297, 'F'); // Full page background
+    
+    doc.setFillColor(0, 255, 255); 
+    doc.rect(0, 0, 210, 297, 'F'); 
   
-    // Add title with larger font and custom color
-    doc.setTextColor(255, 255, 255); // White text color
+
+    doc.setTextColor(255, 255, 255);
     doc.setFontSize(24);
     doc.text('Order Receipt', 105, 20, null, null, 'center');
   

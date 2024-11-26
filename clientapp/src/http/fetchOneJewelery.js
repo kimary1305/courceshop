@@ -1,13 +1,13 @@
-const { Jewelery, JeweleryInfo } = require('../models');  // Импортируем модели
+const { Jewelery, JeweleryInfo } = require('../models');
 
-// Функция для получения информации о конкретном украшении
+
 const fetchOneJewelery = async (id) => {
     const jewelery = await Jewelery.findOne({
         where: { id },
         include: [{
-            model: JeweleryInfo, // Включаем характеристики
-            as: 'info',  // Можно использовать alias, если в модели так указано
-            attributes: ['title', 'description'] // Запрашиваем только нужные поля
+            model: JeweleryInfo,
+            as: 'info',  
+            attributes: ['title', 'description'] 
         }]
     });
     return jewelery;

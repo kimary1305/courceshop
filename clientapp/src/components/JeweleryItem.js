@@ -2,11 +2,11 @@ import React from 'react';
 import { Card, Col } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import star from '../assets/star.png'
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import { JEWELERY_ROUTE } from "../utils/consts";
 
 const JeweleryItem = ({ jewelery }) => {
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     return (
         <Col md={3} className={"mt-3"} onClick={() => navigate(JEWELERY_ROUTE + '/' + jewelery.id)}>

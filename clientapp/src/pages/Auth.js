@@ -10,7 +10,7 @@ import { observer } from "mobx-react-lite";
 import { Context } from "../index";
 
 const Auth = observer(() => {
-    const { user } = useContext(Context);  // Используем контекст для получения данных пользователя
+    const { user } = useContext(Context); 
     const location = useLocation();
     const navigate = useNavigate();
     const isLogin = location.pathname === LOGIN_ROUTE;
@@ -22,22 +22,22 @@ const Auth = observer(() => {
             let data;
 
             if (isLogin) {
-                data = await login(email, password); // Для логина
+                data = await login(email, password); 
             } else {
-                // Для регистрации
+                
                 data = await registration(email, password);
 
-                // После успешной регистрации сразу логиним пользователя
-                data = await login(email, password); // Повторный логин с теми же данными
+                
+                data = await login(email, password); 
             }
 
-            console.log("User data from API:", data); // Проверяем, что приходит с API
+            console.log("User data from API:", data); 
 
             if (data && data.role) {
-                // Обновляем данные в MobX store
-                user.setUser(data);  // Сохраняем данные пользователя, включая роль
-                user.setIsAuth(true);  // Устанавливаем, что пользователь авторизован
-                navigate(SHOP_ROUTE);  // Перенаправляем на страницу магазина
+               
+                user.setUser(data);  
+                user.setIsAuth(true);  
+                navigate(SHOP_ROUTE);  
             } else {
                 console.error("Data or role is undefined", data);
                 alert("Invalid response from the server.");

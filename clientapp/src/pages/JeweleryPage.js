@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Image, Row, Table } from "react-bootstrap";
 import { useParams } from 'react-router-dom';
 import { fetchOneJewelery } from "../http/jeweleryAPI";
-import { addToBasket } from "../http/basketAPI"; // Adding the basket API
+import { addToBasket } from "../http/basketAPI"; 
 import { basketStore } from "../store/Basket";
 
 const JeweleryPage = () => {
@@ -11,13 +11,13 @@ const JeweleryPage = () => {
 
     useEffect(() => {
         fetchOneJewelery(id).then(data => {
-            console.log('Fetched Jewelry:', data); // Log the data to inspect its structure
+            console.log('Fetched Jewelry:', data); 
             setJewelery(data);
         });
     }, [id]);
     
     
-    console.log('Jewelry state:', jewelery); // Логируем state
+    console.log('Jewelry state:', jewelery); 
     
 
     const handleAddToCart = () => {
@@ -28,7 +28,7 @@ const JeweleryPage = () => {
             img: jewelery.img,
         };
 
-        // Add the item to the basket via API or local store
+      
         addToBasket(item)
             .then(() => alert("Товар успішно доданий у кошик!"))
             .catch((error) => console.error("Помилка додавання до кошика:", error));
@@ -116,7 +116,7 @@ const JeweleryPage = () => {
 
             <Container className="mt-4">
                 <Row>
-                    {/* Jewelry Image Gallery */}
+                   
                     <Col md={6} className="text-center">
                         <div className="jewelery-gallery">
                             <Image
@@ -136,7 +136,7 @@ const JeweleryPage = () => {
                         </div>
                     </Col>
 
-                    {/* Jewelry Details */}
+                   
                     <Col md={6}>
                         <div className="jewelery-details">
                             <h2 className="jewelery-title">{jewelery?.name}</h2>
@@ -146,7 +146,7 @@ const JeweleryPage = () => {
                             <Button
                                 variant="danger"
                                 className="add-to-cart-btn"
-                                onClick={handleAddToCart} // Add to cart handler
+                                onClick={handleAddToCart} 
                             >
                                 Додати в кошик
                             </Button>
@@ -155,7 +155,7 @@ const JeweleryPage = () => {
                     </Col>
                 </Row>
 
-                {/* Jewelry Characteristics Section */}
+                
                 <Row className="mt-5">
     <Col>
         <h3>Характеристики</h3>
@@ -179,7 +179,7 @@ const JeweleryPage = () => {
 </Row>
 
 
-                {/* Delivery and Payment Information Sections */}
+                
                 <Row className="mt-5">
                     <Col md={6}>
                         <h3 className="section-title">Доставка</h3>

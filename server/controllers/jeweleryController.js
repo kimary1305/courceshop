@@ -58,7 +58,7 @@ class JeweleryController {
         const {id} = req.params;
         const jewelery = await Jewelery.findOne({
             where: {id},
-            include: [{model: JeweleryInfo, as: 'jewelery_infos'}] // Corrected alias
+            include: [{model: JeweleryInfo, as: 'jewelery_infos'}] 
         });
         return res.json(jewelery);
     }

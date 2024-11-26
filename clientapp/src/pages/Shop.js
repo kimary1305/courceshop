@@ -33,7 +33,7 @@ const Shop = observer(() => {
             padding: "0",
         },
         heroSection: {
-   backgroundColor: "#7FFFD4", // Убедитесь, что путь правильный
+   backgroundColor: "#7FFFD4",
     backgroundSize: "cover",
     backgroundPosition: "center",
     color: "white",

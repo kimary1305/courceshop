@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'; 
 import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./components/AppRouter"; // Make sure this handles routes
+import AppRouter from "./components/AppRouter"; 
 import NavBar from "./components/NavBar";
 import { observer } from "mobx-react-lite";
 import { Context } from "./index";
@@ -26,7 +26,7 @@ const App = observer(() => {
     return (
         <BrowserRouter>
             <NavBar />
-            <AppRouter /> {/* This will handle routes */}
+            <AppRouter /> 
         </BrowserRouter>
     );
 });

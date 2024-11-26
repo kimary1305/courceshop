@@ -51,7 +51,7 @@ const TypeBrand = sequelize.define('type_brand', {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 });
 
-// Связи
+
 User.hasOne(Basket, { foreignKey: 'userId' });
 Basket.belongsTo(User, { foreignKey: 'userId' });
 
